@@ -2,6 +2,12 @@
 
 A modern web application for students to submit, track, and manage aspirations and complaints transparently.
 
+## 🌐 Live Demo
+
+**Website URL:** [https://mahasi.free.nf](https://mahasi.free.nf)
+
+Experience the full functionality of MBUA system with our live demo. The demo includes all features for both students (mahasiswa) and administrators (petugas).
+
 ---
 
 ## 📦 Features
