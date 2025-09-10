@@ -1,5 +1,8 @@
 # Mahasiswa Bersatu Untuk Aspirasi (MBUA)
 
+## Demo Website
+https://mahasi.free.nf
+
 A modern web application for students to submit, track, and manage aspirations and complaints transparently.
 
 ---
