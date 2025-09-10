@@ -8,6 +8,12 @@ A modern web application for students to submit, track, and manage aspirations a
 
 Experience the full functionality of MBUA system with our live demo. The demo includes all features for both students (mahasiswa) and administrators (petugas).
 
+## 📂 GitHub Repository
+
+**Source Code:** [https://github.com/muris11/mahasi_project1.git](https://github.com/muris11/mahasi_project1.git)
+
+Clone, fork, or download the complete source code from our GitHub repository.
+
 ---
 
 ## 📦 Features
@@ -30,7 +36,7 @@ Experience the full functionality of MBUA system with our live demo. The demo in
 
 - Fork or download this repository from GitHub:
   ```
-  git clone https://github.com/yourusername/mbua.git
+  git clone https://github.com/muris11/mahasi_project1.git
   ```
 - Or use GitHub Desktop to clone the repo to your local machine.
 
