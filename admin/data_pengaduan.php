@@ -28,20 +28,6 @@ if (isset($_POST['kirim_tanggapan'])) {
     }
 }
 
-// Proses Update Status
-if (isset($_POST['kirim_tanggapan'])) {
-    $id_pengaduan = $_POST['id_pengaduan'];
-    $status = $_POST['status']; // ambil dari pilihan form
-
-    $query = mysqli_query($koneksi, "UPDATE pengaduan SET status='$status' WHERE id_pengaduan='$id_pengaduan'");
-    if ($query) {
-        echo "<script>alert('Status berhasil diperbarui!'); window.location='daftar_pengaduan.php';</script>";
-    } else {
-        echo "<script>alert('Gagal memperbarui status!');</script>";
-    }
-}
-
-
 // Proses Tanggapan
 if (isset($_POST['kirim'])) {
     $id_pengaduan = $_POST['id_pengaduan'];

@@ -69,21 +69,35 @@ if (isset($_POST['kirim'])) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <style>
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f2f5; }
-.bg-gradient { background: #ffffff; position: relative; overflow: hidden; }
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #f0f2f5; 
+}
+
+.bg-gradient { 
+    background: #ffffff; 
+    position: relative; 
+    overflow: hidden; 
+}
+
 .bg-gradient::before {
     content: '';
     position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
     pointer-events: none;
 }
+
 .login-form-container {
     width: 100%;
     max-width: 400px;
     margin: auto;
     animation: slideInRight 0.8s ease-out;
 }
-@keyframes slideInRight { from{opacity:0; transform:translateX(30px);} to{opacity:1; transform:translateX(0);} }
+
+@keyframes slideInRight { 
+    from{opacity:0; transform:translateX(30px);} 
+    to{opacity:1; transform:translateX(0);} 
+}
 
 .login-card {
     background: rgba(255,255,255,0.97);
@@ -117,414 +131,22 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     overflow: hidden;
     width: 100%;
 }
+
 .btn-primary::before {
     content: '';
     position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
     background: linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
     transition: left 0.5s;
 }
-.btn-primary:hover::before { left: 100%; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(13,110,253,0.3); background: #0b5ed7; }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .min-vh-100 {
-        min-height: auto;
-        padding: 1rem 0;
-    }
-    
-    .container-fluid {
-        padding: 0;
-        height: auto;
-    }
-    
-    .row {
-        margin: 0;
-        min-height: auto;
-    }
-    
-    .login-card { 
-        padding: 2rem 1.5rem; 
-        margin: 0 0.5rem; 
-        width: 100%;
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    }
-    
-    .login-form-container { 
-        padding: 1rem;
-        max-width: 100%;
-    }
-    
-    /* Form elements */
-    .form-label {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .form-control {
-        font-size: 0.95rem;
-        padding: 12px 15px;
-        border-radius: 12px;
-    }
-    
-    .btn-primary { 
-        font-size: 1rem;
-        padding: 14px;
-        border-radius: 12px;
-    }
-    
-    /* Mobile logo */
-    .d-md-none {
-        margin-bottom: 1.5rem;
-    }
-    
-    .d-md-none i {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .d-md-none h4 {
-        font-size: 1.2rem;
-        line-height: 1.3;
-    }
-    
-    /* Title adjustments */
-    h2 {
-        font-size: 1.75rem;
-    }
-    
-    p {
-        font-size: 0.95rem;
-    }
-    
-    /* Alert */
-    .alert {
-        font-size: 0.9rem;
-        padding: 0.75rem 1rem;
-    }
-    
-    /* Text link */
-    .small {
-        font-size: 0.9rem !important;
-    }
-    
-    /* Password toggle positioning */
-    .position-relative .btn {
-        top: 60% !important;
-        padding-right: 0.75rem !important;
-    }
+.btn-primary:hover::before { 
+    left: 100%; 
 }
 
-@media (max-width: 576px) {
-    body {
-        font-size: 15px;
-    }
-    
-    section {
-        min-height: 100vh;
-        padding: 1rem 0;
-    }
-    
-    .container-fluid {
-        padding: 0 0.75rem;
-    }
-    
-    .login-card {
-        padding: 1.5rem 1.25rem;
-        border-radius: 18px;
-        margin: 0 0.25rem;
-    }
-    
-    /* Typography */
-    h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.875rem;
-    }
-    
-    .text-center p {
-        font-size: 0.9rem;
-        margin-bottom: 1.25rem;
-    }
-    
-    /* Form Elements */
-    .form-control {
-        font-size: 16px;
-        padding: 0.75rem 0.875rem;
-        min-height: 46px;
-    }
-    
-    .form-label {
-        font-size: 0.9rem;
-        margin-bottom: 0.4rem;
-    }
-    
-    .btn-primary {
-        padding: 0.75rem;
-        font-size: 0.95rem;
-        min-height: 46px;
-    }
-    
-    /* Spacing */
-    .mb-3 {
-        margin-bottom: 1rem;
-    }
-    
-    .mb-4 {
-        margin-bottom: 1.25rem;
-    }
-    
-    /* Mobile Header */
-    .d-md-none {
-        margin-bottom: 1.25rem;
-        padding: 0 0.5rem;
-    }
-    
-    .d-md-none h4 {
-        font-size: 1.1rem;
-        line-height: 1.2;
-    }
-    
-    .d-md-none i {
-        font-size: 2.25rem;
-    }
-    
-    /* Alert */
-    .alert {
-        font-size: 0.85rem;
-        padding: 0.75rem;
-        margin-bottom: 1.25rem;
-    }
-    
-    /* Text Links */
-    .small {
-        font-size: 0.85rem !important;
-    }
-    
-    /* Password Toggle */
-    .position-relative .btn {
-        right: 0.875rem !important;
-        padding: 0.25rem !important;
-    }
-    
-    .position-relative .btn i {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .login-card {
-        padding: 1.25rem 0.75rem;
-        margin: 0;
-    }
-    
-    .login-form-container {
-        padding: 0.5rem;
-    }
-    
-    .form-control {
-        padding: 10px;
-        font-size: 0.85rem;
-    }
-    
-    .form-label {
-        font-size: 0.85rem;
-    }
-    
-    .btn-primary {
-        padding: 11px;
-        font-size: 0.9rem;
-    }
-    
-    h2 {
-        font-size: 1.3rem;
-    }
-    
-    .alert {
-        font-size: 0.8rem;
-        padding: 0.5rem 0.7rem;
-    }
-}
-
-/* Additional mobile fixes */
-@media (max-width: 768px) {
-    /* Mobile Layout Fixes */
-    body {
-        overflow-x: hidden;
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-    }
-    
-    section {
-        min-height: 100vh;
-        padding: 1rem 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .container-fluid {
-        width: 100%;
-        max-width: 100%;
-        padding: 0 1rem;
-        overflow-x: hidden;
-    }
-    
-    .row {
-        margin: 0;
-        justify-content: center;
-        align-items: center;
-        min-height: auto;
-    }
-    
-    .col-lg-5, .col-md-8, .col-12 {
-        width: 100%;
-        max-width: 400px;
-        padding: 0;
-    }
-    
-    .login-form-container {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-    }
-    
-    .login-card {
-        margin: 0 0.5rem;
-        padding: 2rem 1.5rem;
-        border-radius: 20px;
-        width: auto;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    }
-    
-    /* Form Elements */
-    .form-control {
-        font-size: 16px;
-        padding: 0.875rem 1rem;
-        border-radius: 12px;
-        min-height: 50px;
-    }
-    
-    .form-label {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
-        font-weight: 600;
-    }
-    
-    .btn-primary {
-        padding: 0.875rem;
-        font-size: 1rem;
-        width: 100%;
-        min-height: 50px;
-        border-radius: 12px;
-    }
-    
-    /* Typography */
-    h2 {
-        font-size: 1.75rem;
-        margin-bottom: 1rem;
-    }
-    
-    .text-center p {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-    }
-    
-    /* Spacing */
-    .mb-3 {
-        margin-bottom: 1.25rem;
-    }
-    
-    .mb-4 {
-        margin-bottom: 1.5rem;
-    }
-    
-    /* Mobile Header */
-    .d-md-none {
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-    
-    .d-md-none h4 {
-        font-size: 1.25rem;
-        line-height: 1.3;
-        margin-top: 1rem;
-    }
-    
-    /* Alert */
-    .alert {
-        margin-bottom: 1.5rem;
-        font-size: 0.9rem;
-        padding: 1rem;
-        border-radius: 12px;
-        word-wrap: break-word;
-    }
-    
-    /* Password Toggle */
-    .position-relative .btn {
-        top: 50%;
-        right: 1rem;
-        padding: 0.25rem;
-    }
-}
-
-@media (max-width: 576px) {
-    /* Compact mobile layout */
-    body {
-        font-size: 14px;
-    }
-    
-    .login-form-container {
-        width: 100%;
-        padding: 0.5rem;
-    }
-    
-    /* Reduce form spacing on very small screens */
-    .mb-3 {
-        margin-bottom: 0.75rem;
-    }
-    
-    .mb-4 {
-        margin-bottom: 1rem;
-    }
-    
-    /* Button adjustments */
-    .btn-lg {
-        padding: 0.75rem 1rem;
-        font-size: 1rem;
-    }
-}
-
-@media (max-height: 600px) {
-    /* For landscape or short screens */
-    section {
-        padding: 0.5rem 0;
-    }
-    
-    .login-card {
-        margin: 0.25rem;
-    }
-    
-    .d-md-none {
-        margin-bottom: 1rem;
-    }
-    
-    .mb-4 {
-        margin-bottom: 0.75rem;
-    }
-}
-
-/* Toggle password center vertical */
-.input-password-container { position: relative; }
-.input-password-container .btn-toggle-password {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    color: #0d6efd;
-    z-index: 5;
-    padding: 0;
+.btn-primary:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 20px rgba(13,110,253,0.3); 
+    background: #0b5ed7; 
 }
 
 /* Animated Title and Description */
@@ -641,36 +263,198 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     transition: transform 0.3s ease;
 }
 
-/* Mobile adjustments for animations */
-@media (max-width: 768px) {
-    .animated-title {
+/* Mobile/Tablet Responsive - No Card Background */
+@media (max-width: 991px) {
+    body {
+        background: #f8f9fa;
+        padding: 0;
+        margin: 0;
+    }
+    
+    section {
+        min-height: 100vh;
+        padding: 2rem 0;
+        background: #f8f9fa;
+    }
+    
+    .container-fluid {
+        padding: 0 1rem;
+    }
+    
+    .row {
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .login-form-container {
+        max-width: 500px;
+        padding: 0;
+    }
+    
+    /* Remove card styling on mobile */
+    .login-card {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+    }
+    
+    /* Mobile header styling */
+    .mobile-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 1rem 0;
+    }
+    
+    .mobile-header i {
+        font-size: 3.5rem;
+        color: #0d6efd;
+        margin-bottom: 1rem;
+        display: block;
+    }
+    
+    .mobile-header h1 {
         font-size: 1.5rem;
-        animation-duration: 6s;
+        color: #0d6efd;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
     }
     
-    .animated-description {
+    /* Form styling for mobile */
+    .form-section {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        margin-top: 1rem;
+    }
+    
+    .form-section h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-section p {
         font-size: 1rem;
-        animation-delay: 0.5s;
+        margin-bottom: 1.5rem;
     }
     
-    .animated-icon {
-        font-size: 2.5rem !important;
-        animation-duration: 3s;
+    .form-control {
+        font-size: 16px;
+        padding: 0.875rem 1rem;
+        min-height: 50px;
+    }
+    
+    .form-label {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+    
+    .btn-primary {
+        padding: 0.875rem;
+        font-size: 1.1rem;
+        min-height: 50px;
+    }
+    
+    .alert {
+        font-size: 0.95rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
     }
 }
 
+/* Small mobile adjustments */
 @media (max-width: 576px) {
-    .animated-title {
+    section {
+        padding: 1rem 0;
+    }
+    
+    .container-fluid {
+        padding: 0 0.75rem;
+    }
+    
+    .mobile-header i {
+        font-size: 3rem;
+    }
+    
+    .mobile-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .form-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-section p {
+        font-size: 0.95rem;
+    }
+    
+    .form-control {
+        font-size: 16px;
+        padding: 0.75rem;
+        min-height: 48px;
+    }
+    
+    .form-label {
+        font-size: 0.95rem;
+    }
+    
+    .btn-primary {
+        padding: 0.75rem;
+        font-size: 1rem;
+        min-height: 48px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .container-fluid {
+        padding: 0 0.5rem;
+    }
+    
+    .form-section {
+        padding: 1.25rem;
+        margin: 0.5rem 0;
+    }
+    
+    .mobile-header {
+        margin-bottom: 1.5rem;
+    }
+    
+    .mobile-header i {
+        font-size: 2.5rem;
+    }
+    
+    .mobile-header h1 {
         font-size: 1.2rem;
-        background-size: 200% 200%;
+    }
+}
+
+/* Landscape mobile */
+@media (max-height: 600px) and (max-width: 991px) {
+    section {
+        padding: 1rem 0;
     }
     
-    .animated-description {
-        font-size: 0.9rem;
+    .mobile-header {
+        margin-bottom: 1rem;
     }
     
-    .animated-icon {
-        font-size: 2rem !important;
+    .mobile-header i {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-section {
+        padding: 1.5rem;
     }
 }
 </style>
@@ -680,8 +464,9 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
 <section class="min-vh-100 d-flex align-items-center justify-content-center py-3">
   <div class="container-fluid">
     <div class="row g-0 justify-content-center align-items-stretch min-vh-100">
-      <!-- Ilustrasi kiri desktop -->
-      <div class="col-lg-6 col-md-6 d-none d-md-flex align-items-center justify-content-center bg-gradient">
+      
+      <!-- Desktop Illustration -->
+      <div class="col-lg-6 col-md-6 d-none d-lg-flex align-items-center justify-content-center bg-gradient">
         <div class="text-center text-white p-5 illustration-container">
           <i class="fas fa-university display-1 mb-3 text-primary animated-icon"></i>
           <h2 class="fw-bold mb-3 text-primary animated-title">Mahasiswa Bersatu Untuk Aspirasi</h2>
@@ -689,15 +474,17 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
         </div>
       </div>
 
-      <!-- Form Registrasi -->
+      <!-- Form Section -->
       <div class="col-lg-5 col-md-8 col-12 d-flex align-items-center justify-content-center">
         <div class="login-form-container">
-          <div class="login-card">
-            <div class="text-center mb-4 d-md-none">
-              <i class="fas fa-university text-primary" style="font-size: 3rem;"></i>
-              <h4 class="text-primary fw-bold mt-2">Mahasiswa Bersatu Untuk Aspirasi</h4>
-            </div>
+          
+          <!-- Mobile Header (visible only on mobile/tablet) -->
+          <div class="mobile-header d-lg-none">
+            <i class="fas fa-university animated-icon"></i>
+            <h1 class="animated-title">Mahasiswa Bersatu Untuk Aspirasi</h1>
+          </div>
 
+          <div class="login-card">
             <h2 class="fw-bold text-primary text-center mb-2">Registrasi Akun</h2>
             <p class="text-muted text-center mb-4">Silakan isi data Anda untuk mendaftar</p>
 
@@ -721,34 +508,33 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
                 <label class="form-label fw-semibold text-primary"><i class="fas fa-at me-2"></i>Username</label>
                 <input type="text" class="form-control form-control-lg" name="username" placeholder="Masukkan Username" value="<?= isset($_POST['username'])?htmlspecialchars($_POST['username']):'' ?>" required>
               </div>
-<!-- Password -->
-<div class="mb-3 position-relative">
-  <label for="password" class="form-label fw-semibold text-primary">
-    <i class="fas fa-lock me-2"></i>Password
-  </label>
-  <input type="password" id="password" class="form-control form-control-lg" 
-         placeholder="Masukkan Password" name="password" required>
-  <button type="button" 
-          class="btn btn-link position-absolute end-0" 
-          onclick="togglePassword()" 
-          style="top: 65%; transform: translateY(-50%); z-index: 5; padding-right: 1rem; color: #0d6efd; border: none;">
-      <i class="fas fa-eye" id="toggleIcon"></i>
-  </button>
-</div>
-
-
-
-
+              
+              <!-- Password -->
+              <div class="mb-3 position-relative">
+                <label for="password" class="form-label fw-semibold text-primary">
+                  <i class="fas fa-lock me-2"></i>Password
+                </label>
+                <input type="password" id="password" class="form-control form-control-lg" 
+                       placeholder="Masukkan Password" name="password" required>
+                <button type="button" 
+                        class="btn btn-link position-absolute end-0" 
+                        onclick="togglePassword()" 
+                        style="top: 65%; transform: translateY(-50%); z-index: 5; padding-right: 1rem; color: #0d6efd; border: none;">
+                    <i class="fas fa-eye" id="toggleIcon"></i>
+                </button>
+              </div>
 
               <div class="mb-3">
                 <label class="form-label fw-semibold text-primary"><i class="fas fa-phone me-2"></i>No Telepon</label>
                 <input type="tel" class="form-control form-control-lg" name="telp" placeholder="Masukkan No.Telp" value="<?= isset($_POST['telp'])?htmlspecialchars($_POST['telp']):'' ?>" required>
               </div>
+              
               <div class="d-grid mt-3">
                 <button type="submit" name="kirim" class="btn btn-primary btn-lg fw-semibold">
                   <i class="fas fa-user-plus me-2"></i> Daftar Akun
                 </button>
               </div>
+              
               <p class="small fw-bold mt-3 mb-0 text-center">
                 Sudah punya akun? 
                 <a href="index.php?page=login" class="link-danger text-decoration-none">Login di sini</a>
@@ -761,7 +547,6 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:
     </div>
   </div>
 </section>
-
 
 <script>
 function togglePassword() {

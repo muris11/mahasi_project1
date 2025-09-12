@@ -12,6 +12,10 @@
   <!-- Jika ingin dukungan lebih luas -->
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f0f5ff;
@@ -74,10 +78,11 @@
 
         .form-control {
             border-radius: 0.5rem;
-            padding: 0.6rem 1rem;
+            padding: 0.75rem 1rem;
             border: 1px solid rgba(0, 0, 0, 0.1);
             background-color: #f8faff;
             transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .form-control:focus {
@@ -128,49 +133,60 @@
         }
 
         /* Button Styles */
+        .btn {
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-radius: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
         .btn-outline-warning {
             border-color: #ffc107;
             color: #ffc107;
-            font-weight: 500;
-            transition: all 0.3s ease;
         }
 
         .btn-outline-warning:hover {
             background-color: #ffc107;
             border-color: #ffc107;
             color: #212529;
-            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
         }
 
         .btn-outline-danger {
             border-color: #dc3545;
             color: #dc3545;
-            font-weight: 500;
-            transition: all 0.3s ease;
         }
 
         .btn-outline-danger:hover {
             background-color: #dc3545;
             border-color: #dc3545;
             color: white;
-            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
         }
 
         /* Table Styling */
-        .table-hover tbody tr:hover {
-            background-color: rgba(59, 130, 246, 0.05);
-            transform: scale(1.01);
+        .table {
+            font-size: 0.95rem;
+        }
+
+        .table-hover tbody tr {
             transition: all 0.2s ease;
         }
 
-        .table td:last-child {
-            min-width: 140px;
+        .table-hover tbody tr:hover {
+            background-color: rgba(59, 130, 246, 0.05);
+            transform: scale(1.005);
         }
 
         .table img {
             transition: transform 0.3s ease;
+            border-radius: 0.5rem;
+            max-width: 150px;
+            max-height: 100px;
+            object-fit: cover;
         }
 
         .table img:hover {
@@ -188,83 +204,30 @@
         /* Action Buttons Container */
         .action-buttons {
             display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Responsive Design */
-        @media (min-width: 576px) {
-            .action-buttons {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-
+        /* Responsive Design - Clean and Simple */
         @media (max-width: 768px) {
             body {
-                font-size: 16px;
                 padding-top: 70px;
             }
             
             .navbar-custom {
-                height: 70px;
-                padding: 0.5rem 1rem;
-            }
-            
-            .navbar-brand {
-                font-size: 1rem;
-            }
-            
-            .container-fluid {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .card {
-                margin-bottom: 1.5rem;
+                padding: 0.6rem 1rem;
             }
             
             .card-body {
-                padding: 1.25rem !important;
+                padding: 1.25rem;
             }
             
-            .card-header {
-                padding: 1rem 1.25rem;
-                font-size: 1.1rem;
-            }
-            
-            /* Form Elements */
-            .form-control, .form-select {
-                font-size: 16px;
+            .form-control {
+                font-size: 1rem;
                 padding: 0.75rem;
-                border-radius: 10px;
-                min-height: 48px;
             }
             
-            .form-control-lg {
-                font-size: 16px;
-                padding: 0.875rem;
-            }
-            
-            .form-label {
-                font-size: 0.95rem;
-                margin-bottom: 0.5rem;
-            }
-            
-            /* Buttons */
-            .btn {
-                padding: 0.75rem 1rem;
-                font-size: 0.9rem;
-                border-radius: 8px;
-            }
-            
-            .btn-sm {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
-            }
-            
-            /* Table */
             .table {
                 font-size: 0.9rem;
             }
@@ -273,52 +236,23 @@
                 padding: 0.75rem 0.5rem;
             }
             
-            .table td:last-child {
-                min-width: 120px;
-            }
-            
             .table img {
-                max-width: 80px !important;
-                max-height: 60px !important;
-                border-radius: 8px;
+                max-width: 100px;
+                max-height: 75px;
             }
             
-            /* Action Buttons */
             .action-buttons {
                 flex-direction: column;
-                gap: 0.5rem;
+                align-items: center;
             }
             
             .action-buttons .btn {
                 width: 100%;
-                justify-content: center;
+                max-width: 120px;
             }
             
-            /* Modal */
             .modal-dialog {
                 margin: 1rem;
-            }
-            
-            .modal-lg {
-                max-width: calc(100vw - 2rem);
-            }
-            
-            .modal-header {
-                padding: 1rem 1.25rem;
-            }
-            
-            .modal-body {
-                padding: 1.25rem;
-            }
-            
-            .modal-footer {
-                padding: 1rem 1.25rem;
-            }
-            
-            /* Footer */
-            .footer-custom {
-                height: 60px;
-                padding: 0.75rem 0;
             }
             
             main {
@@ -328,13 +262,11 @@
 
         @media (max-width: 576px) {
             body {
-                font-size: 15px;
                 padding-top: 65px;
             }
             
             .navbar-custom {
-                height: 65px;
-                padding: 0.4rem 0.75rem;
+                padding: 0.5rem 0.75rem;
             }
             
             .navbar-brand {
@@ -346,43 +278,23 @@
             }
             
             .card-body {
-                padding: 1rem !important;
+                padding: 1rem;
             }
             
             .card-header {
-                padding: 0.875rem 1rem;
+                padding: 1rem;
                 font-size: 1rem;
             }
             
-            /* Form Elements */
-            .form-control, .form-select {
-                font-size: 16px;
+            .form-control {
                 padding: 0.625rem;
-                min-height: 44px;
             }
             
-            .form-label {
-                font-size: 0.9rem;
-                margin-bottom: 0.4rem;
-            }
-            
-            /* Buttons */
             .btn {
-                padding: 0.625rem 0.875rem;
                 font-size: 0.85rem;
+                padding: 0.5rem 0.75rem;
             }
             
-            .btn-sm {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.8rem;
-                min-width: 60px;
-            }
-            
-            .btn-sm span {
-                display: none !important;
-            }
-            
-            /* Table */
             .table {
                 font-size: 0.8rem;
             }
@@ -391,57 +303,17 @@
                 padding: 0.5rem 0.25rem;
             }
             
-            .table td:nth-child(3) {
-                max-width: 100px;
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-            
             .table img {
-                max-width: 60px !important;
-                max-height: 45px !important;
+                max-width: 80px;
+                max-height: 60px;
             }
             
-            /* Action Buttons */
-            .action-buttons .btn {
-                padding: 0.4rem;
-                min-width: 50px;
-            }
-            
-            /* Modal */
             .modal-dialog {
                 margin: 0.5rem;
             }
             
-            .modal-lg {
-                max-width: calc(100vw - 1rem);
-            }
-            
-            .modal-title {
-                font-size: 1rem;
-            }
-            
-            .modal-header {
-                padding: 0.875rem 1rem;
-            }
-            
-            .modal-body {
-                padding: 1rem;
-            }
-            
-            .modal-footer {
-                padding: 0.875rem 1rem;
-            }
-            
-            .modal-footer .btn {
-                padding: 0.5rem 0.875rem;
-                font-size: 0.85rem;
-            }
-            
-            /* Footer */
             .footer-custom {
-                height: 55px;
-                padding: 0.5rem 0;
+                padding: 1rem 0;
                 font-size: 0.85rem;
             }
             
@@ -450,7 +322,46 @@
             }
         }
 
-    </style>
+        /* Additional enhancements */
+        .navbar-custom.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-control.is-invalid {
+            border-color: #dc3545;
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+        }
+
+        .modal {
+            backdrop-filter: blur(5px);
+        }
+
+        /* Loading animation */
+        .form-loading {
+            position: relative;
+            pointer-events: none;
+        }
+
+        .form-loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin: -10px 0 0 -10px;
+            border: 2px solid #f3f3f3;
+            border-top: 2px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+</style>
 </head>
 
 <body>
